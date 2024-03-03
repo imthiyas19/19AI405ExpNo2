@@ -1,6 +1,6 @@
 <h1>ExpNo 2 : Implement Depth First Search Traversal of a Graph</h1> 
-<h3>Name: Saravanan N</h3>
-<h3>Register Number/Staff Id: TSML006</h3>
+<h3>Name: MOHAMMED IMTHIYAS .M</h3>
+<h3>Register Number/Staff Id:212222230083 </h3>
 <H3>Aim:</H3>
 <p> To Implement Depth First Search Traversal of a Graph using Python 3.</p>
 <h3>Theory:</h3>
@@ -88,8 +88,67 @@ F H <BR>
 <hr>
 ['0', '1', '2', '3', '4']
 
+### Program:
+```
+import defaultdict
+from collections import defaultdict
+def dfs(graph,start,visited,path):
+    path.append(start)
+    visited[start]=True
+    for neighbour in graph[start]:
+        if visited[neighbour]==False:
+            dfs(graph,neighbour,visited,path)
+            visited[neighbour]=True
+    return path
+graph=defaultdict(list)
+n,e=map(int,input().split())
+for i in range(e):
+    u,v=map(str,input().split())
+    graph[u].append(v)
+    graph[v].append(u)
+#print(graph)
+start='A'
+visited=defaultdict(bool)
+path=[]
+traversedpath=dfs(graph,start,visited,path)
+print(traversedpath)
+```
+```
+from collections import defaultdict
+def dfs(graph,start,visited,path):
+    path.append(start)
+    visited[start]=True
+    for neighbour in graph[start]:
+        if visited[neighbour]==False:
+            dfs(graph,neighbour,visited,path)
+            visited[neighbour]=True
+    return path
+graph=defaultdict(list)
+n,e=map(int,input().split())
+for i in range(e):
+    u,v=map(str,input().split())
+    graph[u].append(v)
+    graph[v].append(u)
+#print(graph)
+start='0'
+visited=defaultdict(bool)
+path=[]
+traversedpath=dfs(graph,start,visited,path)
+print(traversedpath)
+```
+### OUTPUT:
+
+
+
+![307669106-57edb0d0-7572-4e6e-b8e9-60e1b6df500d](https://github.com/natsaravanan/19AI405ExpNo2/assets/120353416/56941cdc-77ba-4cf1-bc5b-50fe126a0aa3)
+
+![307669201-d628903a-11e6-4cd3-baed-f38a146a75e2](https://github.com/natsaravanan/19AI405ExpNo2/assets/120353416/5583c54c-f33e-4189-bb2c-27cb5fa6ee26)
+
+
+
 <hr>
 <h3>Result:</h3>
 <hr>
-<p>Thus,a Graph was constructed and implementation of Depth First Search for the same graph was done successfully.</p>
+<p>Thus,a Graph was constructed and implementation of Depth First Search for the
+same graph was done successfully.</p>
 
